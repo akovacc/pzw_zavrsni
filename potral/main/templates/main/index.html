@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+<title>UNIRI portal</title><br><br><br><br><br>
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body style = "background-color: #112236;">
+    <div style="padding-top:20px;margin-top:0px;">
+    <h1>Uniri portal</h1>
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul>
+            <li><a href="{% url 'portal:home' %}"><img src="{% static 'image.jpg' %} "></a></li>
+            <li><a href="{% url 'portal:home' %}"><p class="navbar">Naslovna</p></p></a></li>
+            <li><a href="{% url 'portal:news' %}"><p class="navbar">Vijesti</p></a></li>
+            <li><a href="{% url 'portal:authors' %}"><p class="navbar">Novinari</p></a></li>
+            <li style="float:right; border-left: 1px solid white"><a  href="/admin"> <p class="navbar">Prijava</p> </a></li>    
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div class="content">
+        {% block content %}
+        <p class="uvod">Dobrodošli na novinski portal Sveučilišta u Rijeci, UNIRI portal.
+    </br>Ovdje možete naići na radnom članke godine, te pristupiti podatcima autora istih.</p><br><br>
+    <p style="text-align:center;"><img src="{% static 'fidit.jpg' %} " width="50%" height="auto" align="center"></p><br><br><br><br>
+    
+    {% endblock %}
+    </div>
+</div>
+
+<div class="footer">
+    Izrada: Antonio Kovačev
+    </div>
+</body>
+</html>

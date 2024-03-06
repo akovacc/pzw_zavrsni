@@ -1,0 +1,16 @@
+
+{%extends "index.html"%}
+{% block content %}
+<h2><strong>Novinari</strong></h2>
+<ol class="tekst">
+    {% for author in author_list %}
+        <p class="autor"> {{ author.name}} {{author.surname}} </p>
+        <p class="autor">Kontakt: {{author.phone_number}} </p>
+        <p class="autor"> {{ author.email }}</p>
+        
+        <hr>
+    {% endfor %}
+</ol>
+{% endblock %}
+
+<a href="{% url 'portal:update' portal.pk %}">Upddate</a>
